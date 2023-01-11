@@ -1,5 +1,5 @@
 from pprint import pprint
-
+import pandas as pd
 import matplotlib.pyplot as plt
 
 
@@ -40,30 +40,41 @@ def top_song_from_a_day(data):
     song_title = []
     rate_song = {}
     dayreq = '2021-11-06'
-    howManySongs = 0
-    howManySongs2 = 0
+ #   howManySongs = 0
+  #  howManySongs2 = 0
     for row in data:
-        howManySongs = howManySongs+1
+      #  howManySongs = howManySongs+1
         if row[0] == dayreq and int(row[1]) <= 10:
 
-            howManySongs2 = howManySongs2+1
+  #          howManySongs2 = howManySongs2+1
 
-            song_title.append(row[2])
-            rate.append(row[1])
+      #      song_title.append(row[2])
+     #       rate.append(row[1])
             rate_song.update({row[1]: row[2]})
+ #   print(rate_song)
+    print("{:<8} {:<15}".format('Rank', 'Song title'))
+    for row in rate_song:
+        print("{:<8} {:<15}".format((row), rate_song.get(row[0])))
 
 
+#    for row in rate_song:
+ #       print(row[0], row[1])
+    # Iterate through the dictionary
+    # to print the data.
+
+"""
            # song.append(row[2])
     bar_plot = dict(rate_song)   #(df['Genre'].values).most_common(5))
     plt.bar(*zip(*bar_plot.items()))
+  #  bar_plot.plot
     plt.show()
     print(rate_song)
     print(song_title, rate)
 
     print(howManySongs2)
 
-
-
+*/
+"""
 
    # print(date,song)
 """
