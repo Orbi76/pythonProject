@@ -60,7 +60,8 @@ def run():
         elif selection == "6":
             process.top10_songs_of_a_day(song_data)
         elif selection == "7":
-            process.sortdata2(song_data)
+            print("List of number 1 songs")
+            process.list_of_number1_songs(song_data)
 
         elif selection == "9":
             break

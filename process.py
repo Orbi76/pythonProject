@@ -17,8 +17,8 @@ def top_song_details_for_a_day(data):
 
 def top10_songs_of_a_day(data):
     rate_song = {}
-   # dayreq = input("giv a date in YYYY-MM-DD format")
-    dayreq = '2021-10-30'
+    dayreq = input("giv a date in YYYY-MM-DD format")
+    #dayreq = '2021-10-30'
     for row in data:
         if row[0] == dayreq and int(row[1]) < 11:
             rate_song.update({row[1]: row[2]})
@@ -53,7 +53,8 @@ def list_of_number1_songs(data):
         if row[1] == "1":
 #        numer_one_songs = {"Artist": row[3], "Song": row[2], "Total number 1 position": total}
             numer_one_songs.append(row)
-    print(numer_one_songs)
+    for row in numer_one_songs:
+        print(row)
 
 def top10_weeksonboard(data):
     top10 = []
@@ -79,11 +80,7 @@ def sortdata(data):
     print(data)
 #    sorted_list.(ezt)
     print(sorted_list)
-   # print(sorted_list)
-  #  print(df)
 
-  #  sorted_list = sorted(data, key=lambda x:x[6])
- #   print(sorted_list)
 
 
 
