@@ -53,17 +53,15 @@ def run():
 
         elif selection == "4":
             print(4)
-            process.list_of_number1_songs(song_data)
-
+            process.moved_the_most(song_data)
         elif selection == "5":
             process.display_one_artists_results(song_data)
         elif selection == "6":
             process.top10_songs_of_a_day(song_data)
         elif selection == "7":
             print("List of number 1 songs")
-            process.display_one_artists_results(song_data)
-
-        elif selection == "9":
+            process.list_of_number1_songs(song_data)
+        elif selection == "8":
             break
         else:
             tui.error("Invalid Selection!")

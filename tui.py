@@ -33,9 +33,7 @@ def menu():
     {"[5]":<10} Visualise one artist's song
     {"[6]":<10} Top 10 on a given day
     {"[7]":<10} List of number 1 songs
-    {"[8]":<10} test
-    
-    {"[9]":<10} Exit the program
+    {"[8]":<10} Exit the program
     """)
     selection = input("Your selection: ")
     return selection.strip().lower()

@@ -130,3 +130,18 @@ def display_one_artists_results(data):
     fig.suptitle('Categorical Plotting')
     plt.show()
 
+def moved_the_most(data):
+    song = [1]
+    rank = 0
+    peakrank = 0
+    diference = 0
+
+    for row in data:
+        if(int(row[1]) - int(row[5]) > diference):
+            diference = int(row[1]) - int(row[5])
+            song.pop()
+            song.append(row)
+    print(song[0][2])
+    songtitle = song[0][2]
+    artist = song[0][3]
+    print("The "+song[0][2]+" from"+ song[0][3]+ " moved the most in ranking on board!")
