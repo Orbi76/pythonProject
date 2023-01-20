@@ -1,31 +1,31 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 import csv
 import matplotlib
 import matplotlib.pyplot as plt
 import unittest
 from pathlib import Path
 import tui
+import process
 def read_data(file_path):
-    tui.started(f"Reading data from {file_path}")
+    try:
+        tui.started(f"Reading data from {file_path}")
 
-    data_folder = Path("/Users/gabor/Documents/Solent/5. év Masters/Computer Fundamentals/Python/")
+        data_folder = Path("/Users/gabor/Documents/Solent/5. év Masters/Computer Fundamentals/Python/")
 
-    file_to_open = data_folder / file_path
+        file_to_open = data_folder / file_path
 
-    f = open(file_to_open)
+        f = open(file_to_open)
 
-    data = []
+        data = []
 
-    reader = csv.reader(f)
-    header = []
-    header = next(reader)
-    for row in reader:
-        data.append(row)
-    tui.completed()
-    return data
+        reader = csv.reader(f)
+        header = []
+        header = next(reader)
+        for row in reader:
+            data.append(row)
+        tui.completed()
+        return data
+    except IOError:
+        print("Cannot read file.")
 
 
 def print_hi(name):
@@ -33,33 +33,43 @@ def print_hi(name):
     print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
 
 
-
-
 def run():
     song_data = read_data("charts.csv")
+    #date = '2021-10-30'
+  #  date = input("giv a date")
     while True:
         selection = tui.menu()
         if selection == "1":
             print(1)
-            tui.top_song_from_a_day(song_data)
-          # process.list_years(athlete_data)
+            process.top_song_details_for_a_day(song_data)
+
         elif selection == "2":
             print(2)
-           # process.tally_medals(athlete_data)
+            process.details_of_artists_mtrs(song_data)
+
         elif selection == "3":
             print(3)
-            #process.tally_team_medals(athlete_data)
-        elif selection == "3":
+            process.top10_weeksonboard2(song_data)
+
+        elif selection == "4":
             print(4)
+            process.list_of_number1_songs(song_data)
+
         elif selection == "5":
+            process.top_song_details_for_a_day(song_data)
+        elif selection == "6":
+            process.top10_songs_of_a_day(song_data)
+        elif selection == "7":
+            process.sortdata2(song_data)
+
+        elif selection == "9":
             break
         else:
             tui.error("Invalid Selection!")
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     run()
-#    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+
