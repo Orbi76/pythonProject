@@ -56,12 +56,12 @@ def run():
             process.list_of_number1_songs(song_data)
 
         elif selection == "5":
-            process.top_song_details_for_a_day(song_data)
+            process.display_one_artists_results(song_data)
         elif selection == "6":
             process.top10_songs_of_a_day(song_data)
         elif selection == "7":
             print("List of number 1 songs")
-            process.list_of_number1_songs(song_data)
+            process.display_one_artists_results(song_data)
 
         elif selection == "9":
             break

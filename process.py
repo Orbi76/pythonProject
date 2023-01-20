@@ -2,6 +2,10 @@ import tui
 from operator import itemgetter
 import pandas as pd
 from itertools import zip_longest
+import matplotlib.pyplot as plt
+
+import vis
+
 
 def top_song_details_for_a_day(data):
     dayreq = input("giv a date in YYYY-MM-DD format (like 2021-10-30)")
@@ -102,3 +106,27 @@ def top10_weeksonboard2(data):
     masdic.update(elsodictionary)
     for row in masdic:
         print(row)
+
+def display_one_artists_results(data):
+    days = []
+    ranks = []
+    dat = {}
+    songtitle = input('give song title like "Pepas" ')
+    artist = input('give the artist of the song like "Farruko"')
+    for row in data:
+        if(row[2] == songtitle and row[3] == artist):
+            days.append(row[0])
+            ranks.append(row[1])
+            dat.update({row[0]: row[1]})
+
+   # vis.display(days, ranks)
+
+    names = list(dat.keys())
+    values = list(dat.values())
+    fig, axs = plt.subplots(1, 3, figsize=(9, 3), sharey=True)
+    axs[0].bar(names, values)
+    axs[1].scatter(names, values)
+    axs[2].plot(names, values)
+    fig.suptitle('Categorical Plotting')
+    plt.show()
+

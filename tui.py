@@ -30,7 +30,7 @@ def menu():
     {"[2]":<10} Details of the Artists with the most top ranked songs
     {"[3]":<10} Details of the 10 songs with the longest number of weeks on the board
     {"[4]":<10} song that has moved the most in ranking on the board
-    {"[5]":<10} Visualise the top songs
+    {"[5]":<10} Visualise one artist's song
     {"[6]":<10} Top 10 on a given day
     {"[7]":<10} List of number 1 songs
     {"[8]":<10} test
